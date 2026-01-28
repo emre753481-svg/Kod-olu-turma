@@ -1,1 +1,0 @@
-# GitAnalyzer Pro (Generated)

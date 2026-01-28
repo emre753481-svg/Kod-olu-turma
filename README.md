@@ -1,9 +1,21 @@
-# GitAnalyzer Pro - Bootstrap Repo (Generator)
+# GitAnalyzer Pro
 
-Bu repo ilk aşamada sadece generator içerir. GitHub Actions çalışınca `gitanalyzer-pro/` fullstack projesini otomatik üretir ve bu repoya commit/push eder.
+Enterprise-level GitHub repository analyzer that generates documentation with AI (OpenAI/Anthropic) and exports results as PDF/Markdown/JSON.
 
-## Çalıştırma
-1) Repo Settings → Actions → Workflow permissions: Read and write (önerilir)
-2) Actions sekmesi → "Generate Full Project" workflow → Run workflow
-3) Workflow bitince repo içinde `backend/`, `frontend/`, `docker-compose.yml` vb. oluşur.
-4) Railway: Deploy from GitHub repo ile deploy et (backend ve frontend için ayrı servis önerilir).
+## Local (Docker)
+1) Copy envs:
+- `cp backend/.env.example backend/.env`
+- `cp frontend/.env.example frontend/.env`
+
+2) Start:
+- `docker compose up --build`
+
+Backend: http://localhost:8000/docs  
+Frontend: http://localhost:5173
+
+## Railway
+- Create 2 services from the same GitHub repo:
+  - Backend: root directory `backend`
+  - Frontend: root directory `frontend`
+- Set backend variables: `GITHUB_TOKEN`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `PLANTUML_BASE_URL`
+- Set frontend variable: `VITE_API_BASE_URL` (backend public URL)
