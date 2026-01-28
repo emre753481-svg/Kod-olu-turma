@@ -1,9 +1,9 @@
 from fastapi import FastAPI, BackgroundTasks, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from weasyprint import HTML
-from backend.core.config import settings
-from backend.models.analysis import AnalyzeRequest, AnalyzeResponse, StatusResponse, ResultsResponse
-from backend.services.job_store import InMemoryJobStore
+from core.config import settings
+from models.analysis import AnalyzeRequest, AnalyzeResponse, StatusResponse, ResultsResponse
+from services.job_store import InMemoryJobStore
 
 app = FastAPI(title=settings.app_name)
 
