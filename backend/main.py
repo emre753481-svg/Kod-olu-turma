@@ -83,3 +83,10 @@ async def export(analysis_id: str, fmt: str):
         return {"content_type": "application/pdf", "bytes_base64": __import__("base64").b64encode(pdf_bytes).decode("ascii")}
 
     raise HTTPException(status_code=400, detail="Invalid format. Use pdf/markdown/json.")
+backend/core/__init__.py
+
+backend/models/__init__.py
+
+backend/services/__init__.py
+
+backend/analyzers/__init__.py
